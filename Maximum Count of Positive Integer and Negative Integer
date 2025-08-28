@@ -1,0 +1,14 @@
+function maximumCount(nums: number[]): number {
+
+    let number1 = nums.filter(t => t < 0).length
+    let number2 = nums.filter(t => t > 0).length
+
+    if(number1 > number2){
+        return number1
+    }
+
+    else{
+        return number2
+    }
+    
+};
