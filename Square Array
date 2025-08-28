@@ -1,0 +1,8 @@
+function sortedSquares(nums: number[]): number[] {
+    let result = new Array()
+    for(let num of nums){
+        result.push(num**2)
+    }
+    result.sort((a,b)=> a - b)
+    return result
+};
