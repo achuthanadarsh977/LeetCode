@@ -1,0 +1,21 @@
+function checkSubarraySum(nums: number[], k: number): boolean {
+
+    let a = 0;
+
+    const map = {'0':-1};
+
+    for(let i=0;i<nums.length;i++){
+        a+=nums[i]
+
+
+        if(map[a % k] === undefined){
+            map[a % k] = i
+        }
+
+        if(map[a % k] < i - 1){
+            return true
+        }
+    }
+    return false
+    
+};
