@@ -1,0 +1,5 @@
+function maximumProduct(nums: number[]): number {
+
+    const g = nums.sort((a,b) => a - b);
+    return Math.max(g[0]*g[1]*g[g.length - 1], g[g.length - 1]*g[g.length - 2]*g[g.length - 3]);
+};
