@@ -1,0 +1,7 @@
+
+SELECT  E.employee_id , E.name  , COUNT(R.reports_to) as reports_count,
+ROUND(AVG(R.age),0) as average_age FROM Employees E JOIN Employees R
+ON E.employee_id = R.reports_to
+GROUP BY R.reports_to
+HAVING COUNT(R.reports_to) > 0
+ORDER BY E.employee_id ;
