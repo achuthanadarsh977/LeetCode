@@ -1,0 +1,28 @@
+function intersect(nums1: number[], nums2: number[]): number[] {
+    let result = []
+    let sorted1 = nums1.sort((a,b) => a - b)
+    let sorted2 = nums2.sort((a,b) => a - b)
+    let p1 = 0
+    let p2 = 0
+
+    while(p1 < sorted1.length && p2 < sorted2.length){
+        if(sorted1[p1] === sorted2[p2]){
+            result.push(sorted1[p1])
+            p1+=1
+            p2+=1
+        }
+
+        else if(sorted1[p1] > sorted2[p2]){
+            p2+=1
+
+        }
+
+        else if(sorted1[p1] < sorted2[p2]){
+            p1+=1
+        }
+    }
+
+    return result
+
+    
+};
