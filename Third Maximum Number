@@ -1,0 +1,10 @@
+function thirdMax(nums: number[]): number {
+
+    const s1 = [...new Set(nums)]
+
+    const s2 = s1.sort((a,b) => b - a)
+
+    return s2[s2.length >= 3 ? 2 : 0]
+
+    
+};
