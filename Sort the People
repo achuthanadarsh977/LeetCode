@@ -1,0 +1,16 @@
+function sortPeople(names: string[], heights: number[]): string[] {
+
+    const original = [...heights];
+    heights.sort((a,b) => b - a)
+    let result = []
+
+    heights.forEach((height) => {
+
+        result.push(names[original.indexOf(height)])
+
+    })
+
+    return result;
+
+
+};
