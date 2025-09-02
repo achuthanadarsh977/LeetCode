@@ -1,0 +1,8 @@
+function arrayPairSum(nums: number[]): number {
+
+    let  r = nums.sort((a,b) => (a - b))
+
+    return r.reduce((total,num,i) => (i%2 === 0) ? total+num:total)
+    
+    
+};
