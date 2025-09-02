@@ -1,0 +1,28 @@
+
+
+function reverseOnlyLetters(s: string): string {
+    let left = 0
+    let right = s.length - 1
+
+    let arr = s.split("")
+
+    while(left<right){
+
+        if(!/[a-zA-Z]/.test(arr[left])){
+            left++;
+        }
+
+        else if(!/[a-zA-Z]/.test(arr[right])){
+            right--;
+        }
+
+        else{
+            [arr[left],arr[right]] = [arr[right],arr[left]]
+            left++;
+            right--;
+        }
+    }
+
+    return arr.join("")
+
+};
