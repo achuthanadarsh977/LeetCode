@@ -1,0 +1,31 @@
+function reverseVowels(s: string): string {
+
+    const vowels = 'aeiouAEIOU'
+    let set1 = new Set(vowels)
+
+    let result : string[] = s.split('');
+    
+    let left = 0
+    let right = result.length - 1
+
+    while(left < right){
+        
+       if(!set1.has(result[left])){
+           left++;
+        }
+
+       else if(!set1.has(result[right])){
+          right--;
+        }
+
+        else{
+          [result[left] , result[right]] = [result[right] , result[left]];
+          left++;
+          right--;
+        }
+
+    }
+
+    return result.join('')
+
+};
