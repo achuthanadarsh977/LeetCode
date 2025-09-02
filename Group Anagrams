@@ -1,0 +1,19 @@
+
+function groupAnagrams(words: string[]): string[][] {
+    const map = new Map<string, string[]>();
+    
+    for (let word of words) {
+        let key = word.split("").sort().join("");
+        
+        if (!map.has(key)) {
+            map.set(key, []);
+        }
+
+        map.get(key)!.push(word);
+    }
+
+    return Array.from(map.values());
+}
+
+// Example
+console.log(groupAnagrams(["eat","tea","tan","ate","nat","bat"]));
