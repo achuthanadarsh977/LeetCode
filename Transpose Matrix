@@ -1,0 +1,20 @@
+function transpose(matrix: number[][]): number[][] {
+
+    let rows = matrix.length
+    let column = matrix[0].length
+
+    let result:number[][] = []
+
+    for(let j=0;j<column;j++){
+        let newRow:number[] = []
+        for(let i=0;i<rows;i++){
+
+            newRow.push(matrix[i][j])
+        }
+
+        result.push(newRow)
+    }
+
+    return result
+    
+};
