@@ -1,0 +1,17 @@
+function isToeplitzMatrix(matrix: number[][]): boolean {
+
+    let rows = matrix.length
+    let cols = matrix[0].length
+
+    
+
+    for(let j=1;j<cols;j++){
+        for(let i=1;i<rows;i++){
+            if (matrix[i][j] !== matrix[i-1][j-1]){
+                return false
+            }
+        }
+    } 
+
+    return true
+};
