@@ -1,0 +1,10 @@
+function postorderTraversal(root: TreeNode | null,result:number[] = []): number[] {
+
+    if (root !== null){
+        postorderTraversal(root.left,result)
+        postorderTraversal(root.right,result)
+        result.push(root.val)
+
+    }
+    return result
+};
