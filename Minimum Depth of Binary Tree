@@ -1,0 +1,16 @@
+function minDepth(root: TreeNode | null): number {
+
+    if(root === null){
+        return 0
+    }
+
+    const leftDepth = minDepth(root.left)
+    const rightDepth = minDepth(root.right)
+
+    if(leftDepth === 0 || rightDepth === 0){
+        return Math.max(leftDepth,rightDepth) + 1
+    }
+
+    return Math.min(leftDepth,rightDepth) + 1
+    
+};
