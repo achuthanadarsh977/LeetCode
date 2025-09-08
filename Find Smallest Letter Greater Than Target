@@ -1,0 +1,26 @@
+function nextGreatestLetter(letters: string[], target: string): string {
+
+    let left = 0
+    let p = -1
+    let right = letters.length - 1
+
+    while(left<=right){
+        let mid = Math.floor((left+right)/2)
+
+
+
+        if(letters[mid] > target){
+            p = mid
+            right = mid-1
+        }
+
+        else{
+            left = mid+1
+        }
+
+
+    }
+    return p === -1 ? letters[0]:letters[p]
+
+    
+};
