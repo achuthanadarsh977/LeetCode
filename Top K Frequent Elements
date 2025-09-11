@@ -1,0 +1,32 @@
+function topKFrequent(nums: number[], k: number): number[] {
+   const n = nums.length
+   const output = []
+
+   const freqMap = new Map<number,number>();
+
+   for(let num of nums){
+    freqMap.set(num , (freqMap.get(num) || 0) + 1)
+   }
+
+   const buckets : number[][] = new Array(n + 1).fill(null).map(() => [])
+   for(let key of freqMap.keys()){
+     buckets[freqMap.get(key)].push(key)
+   }
+
+   for(let i=n;i>=1;--i){
+     let bucketElements = buckets[i];
+
+     if(bucketElements.length > 0){
+        for(let j=0;j<bucketElements.length;++j){
+            if(k === 0) break;
+            output.push(bucketElements[j])
+            k--;
+        }
+     }
+
+   }
+
+   return output
+
+    
+};
