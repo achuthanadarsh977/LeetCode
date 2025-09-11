@@ -1,0 +1,40 @@
+function findRotation(mat: number[][], target: number[][]): boolean {
+
+    let n = mat.length
+    let c90=0;
+    let c180=0;
+    let c270=0
+    let c0=0;
+
+    for(let i=0;i<n;i++){
+        for(let j=0;j<n;j++){
+
+            if(mat[i][j] === target[n-j-1][i]){
+                c90++;
+            }
+
+            if(mat[i][j] === target[n-i-1][n-j-1]){
+                c180++;
+            }
+
+            if(mat[i][j] === target[j][n-i-1]){
+                c270++;
+            }
+
+            if(mat[i][j] === target[i][j]){
+                c0++;
+            }
+
+        }
+    }
+
+    if(c90 === (n*n) || c180 === (n*n) || c270 === (n*n) ||  c0 === (n*n)){
+        return true
+    }
+
+    else{
+        return false
+    }
+
+    
+};
