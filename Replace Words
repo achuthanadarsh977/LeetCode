@@ -1,0 +1,30 @@
+function replaceWords(dictionary: string[], sentence: string): string {
+
+   let words : string[] = sentence.split(" ")
+
+   for(let i=0;i<words.length;i++){
+       for(let ren of dictionary){
+          const isRoot = Rootvalid(ren , words[i])
+          if(isRoot){
+            words[i] = ren
+          }
+       }
+   }
+
+function Rootvalid(root:string,word:string):boolean{
+    for(let i=0;i<root.length;i++){
+        if(word[i] !== root[i]){
+            return false
+        }
+    }
+    return true
+   }
+
+return words.join(" ")
+
+
+
+
+
+
+};
