@@ -1,0 +1,35 @@
+/**
+ Do not return anything, modify matrix in-place instead.
+ */
+function rotate(matrix: number[][]): number[][] {
+
+    let n = matrix.length
+
+    
+    for(let row=0;row<n;row++){
+        for(let col=row+1;col<n;col++){
+            let temp = matrix[row][col]
+            matrix[row][col] = matrix[col][row]
+            matrix[col][row] = temp
+        }
+    }
+
+
+    for(let row = 0;row<matrix.length;row++){
+        let left = 0
+        let right = n - 1
+        while(left<right){
+            let temp = matrix[row][left]
+            matrix[row][left] = matrix[row][right]
+            matrix[row][right] = temp
+            left++;
+            right--;
+        }
+
+        }
+
+
+    return matrix
+    
+    
+};
