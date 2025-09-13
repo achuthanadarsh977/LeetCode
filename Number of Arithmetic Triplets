@@ -1,0 +1,24 @@
+function arithmeticTriplets(nums: number[], diff: number): number {
+
+    function helper(i: number): number {
+        if (i >= nums.length) {
+            return 0
+        }
+
+        let total = 0
+        for (let j = i + 1; j < nums.length; j++) {
+            if (nums[j] - nums[i] === diff) {
+                for (let k = j + 1; k < nums.length; k++) {
+                    if (nums[k] - nums[j] === diff) {
+                        total += 1
+                    }
+                }
+            }
+        }
+
+        return total + helper(i + 1)
+    }
+
+    return helper(0)
+    
+};
