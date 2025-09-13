@@ -1,0 +1,12 @@
+function doesAliceWin(s: string): boolean {
+
+    const vowels = 'aeiouAEIOU'
+
+    for(let char of vowels){
+        if (s.includes(char)){
+            return true
+        }
+    }
+    return false
+    
+};
