@@ -1,0 +1,14 @@
+function licenseKeyFormatting(s: string, k: number): string {
+
+    const f = s.replace(/-/g,'').toUpperCase()
+    const firstgroup = f.length%k || k
+
+    const model:string[] = [f.slice(0,firstgroup)]
+    for(let i=firstgroup;i<f.length;i+=k){
+        model.push(f.slice(i,i+k))
+
+    }
+
+    return model.join('-')
+    
+};
