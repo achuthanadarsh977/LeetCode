@@ -1,0 +1,30 @@
+function sortVowels(s: string): string {
+    const vowels = "aeiouAEIOU"
+
+    let vowelList:string[] = []
+
+    for(let char of s){
+        if(vowels.includes(char)){
+            vowelList.push(char)
+        }
+    }
+
+    vowelList.sort()
+
+    let result:string[]=[]
+
+    let index = 0
+
+    for(let ch of s){
+        if(vowels.includes(ch)){
+            result.push(vowelList[index])
+            index++;
+        }
+
+        else{
+            result.push(ch)
+        }
+    }
+
+    return result.join('')
+    
