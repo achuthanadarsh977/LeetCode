@@ -1,0 +1,10 @@
+WITH CTE AS(
+    SELECT  requester_id as id FROM RequestAccepted
+    UNION ALL
+    SELECT accepter_id as id FROM RequestAccepted
+
+)
+
+
+SELECT ID , COUNT(*) AS num FROM 
+CTE group by 1 order by 2 desc limit 1;
