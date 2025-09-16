@@ -1,0 +1,13 @@
+function titleToNumber(columnTitle: string): number {
+
+    let column:string = columnTitle.toUpperCase()
+    let result:number = 0
+
+    for(let char of column){
+        result = result * 26 + (char.charCodeAt(0) - 64)
+
+    }
+    return result;
+
+    
+};
