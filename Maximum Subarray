@@ -1,0 +1,20 @@
+function maxSubArray(nums: number[]): number {
+
+    const memo: (number | undefined)[] = new Array(nums.length);
+
+
+    function helper(i:number):number{
+        if(i === 0) return nums[0];
+        if(memo[i] !== undefined) return memo[i]
+        const prev = helper(i-1)
+        memo[i] = Math.max(nums[i],nums[i]+prev)
+        return memo[i]
+    }
+
+    let maxsum = nums[0]
+    for(let i = 0;i < nums.length;i++){
+        maxsum = Math.max(maxsum,helper(i))
+    }
+    return maxsum
+    
+};
