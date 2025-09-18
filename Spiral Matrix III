@@ -1,0 +1,27 @@
+function spiralMatrixIII(rows: number, cols: number, rStart: number, cStart: number): number[][] {
+
+    let res:number[][] = []
+    let total = rows * cols
+    let i = rStart
+    let j = cStart
+    let diri = 0
+    let dirj = 1
+    let step = 1
+
+    while(res.length < total){
+        for(let t=0;t<2;t++){
+            for(let k=0;k<step;k++){
+                if(i >= 0 && i < rows && j >= 0 && j < cols){
+                    res.push([i,j])
+                }
+                i+=diri
+                j+=dirj
+            }
+
+            [diri,dirj] = [dirj,-diri]
+        }
+        step++
+    }
+
+    return res
+};
