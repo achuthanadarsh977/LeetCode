@@ -1,0 +1,27 @@
+function reformatDate(date: string): string {
+
+   let arr:String[] = date.split(" ");
+   
+   const map = new Map<String,String>();
+   map.set("Jan","01");
+   map.set("Feb","02");
+   map.set("Mar","03");
+   map.set("Apr","04");
+   map.set("May","05");
+   map.set("Jun","06");
+   map.set("Jul","07");
+   map.set("Aug","08");
+   map.set("Sep","09");
+   map.set("Oct","10");
+   map.set("Nov","11");
+   map.set("Dec","12");
+
+   let year = arr[2];
+   let month = map.get(arr[1]);
+   let day = arr[0].substring(0,arr[0].length - 2)
+   if(day.length === 1){
+      day="0"+day;
+   }
+
+   return year+"-"+month+"-"+day;
+};
