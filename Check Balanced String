@@ -1,0 +1,19 @@
+function isBalanced(num: string): boolean {
+    let odd = 0
+    let even = 0
+
+    for(let i=0;i<num.length;i++){
+
+          const digit = parseInt(num[i])
+          if(i%2 === 1){
+             odd+=digit;
+          }
+
+          else{
+            even +=digit;
+          }
+    }
+
+    return odd === even
+    
+};
