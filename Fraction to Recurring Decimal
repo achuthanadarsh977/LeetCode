@@ -1,0 +1,45 @@
+function fractionToDecimal(numerator: number, denominator: number): string {
+
+
+    if (numerator === 0){
+        return "0"
+    }
+
+    let res:string[] = []
+
+    if ((numerator < 0) !== (denominator < 0)){
+        res.push("-")
+    } 
+
+    numerator = Math.abs(numerator)
+    denominator = Math.abs(denominator)
+
+    res.push(Math.floor(numerator/denominator).toString())
+
+    let rem = (numerator % denominator)
+
+    if(rem === 0){
+        return res.join("")
+    }
+
+    res.push(".")
+    let remMap:Record<number,number> = {}
+
+    while(rem !== 0){
+        if(rem in remMap){
+            let pos = remMap[rem]
+            res.splice(pos,0,"(")
+            res.push(")")
+            return res.join("")
+        }
+
+        remMap[rem] = res.length
+        rem*=10
+        res.push(Math.floor(rem / denominator).toString())
+        rem%=denominator
+
+    }
+
+    return res.join("")
+    
+};
