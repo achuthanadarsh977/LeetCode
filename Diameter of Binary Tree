@@ -1,0 +1,21 @@
+function diameterOfBinaryTree(root: TreeNode | null): number {
+
+    let maxdiameter = 0
+
+    function height(node: TreeNode | null): number {
+          if(!node){
+            return 0
+          }
+
+          let leftheight = height(node.left)
+          let rightheight = height(node.right)
+
+          maxdiameter =  Math.max(maxdiameter,leftheight+rightheight)
+          return 1 + Math.max(leftheight,rightheight)
+
+    }
+
+    height(root)
+    return maxdiameter
+    
+};
