@@ -1,0 +1,13 @@
+function missingNumber(nums: number[]): number {
+    
+    let r = nums.length
+    nums.sort((a,b) => a - b)
+    for(let i = 0;i<r;i++){
+        if(nums[i] !== i){
+            return i
+        }
+    }
+
+    return r
+   
+};
