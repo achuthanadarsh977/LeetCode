@@ -1,0 +1,33 @@
+function multiply(num1: string, num2: string): string {
+    
+
+    const x = num1.length
+    const y = num2.length
+
+    if(num1 === "0" || num2 === "0"){
+        return "0"
+    }
+
+    const z = Array(x+y).fill(0)
+
+    for(let i = x-1;i>=0;i--){
+        for(let j=y-1;j>=0;j--){
+            const mul = (num1.charCodeAt(i) - 48) * (num2.charCodeAt(j) - 48)
+            const sum = mul + z[i+j+1]
+
+            z[i+j+1] = sum % 10
+            z[i+j] += Math.floor(sum / 10)
+        }
+    }
+
+    let result = z.join('')
+
+    while(result[0] === "0"){
+        result = result.slice(1)
+    }
+
+
+    return result
+    
+    
+};
