@@ -1,0 +1,13 @@
+function findNonMinOrMax(nums: number[]): number {
+
+    nums = nums.sort((a,b) => a - b)
+
+    if(nums.length > 2){
+        return nums[1]
+    }
+    
+    else{
+        return -1
+    }
+    
+};
