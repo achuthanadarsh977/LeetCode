@@ -1,0 +1,24 @@
+function kthDistinct(arr: string[], k: number): string {
+
+
+    let count = 0
+    const freq1 = new Map<string,number>()
+    const f = []
+
+    for(const t of arr){
+        freq1.set(t , (freq1.get(t) || 0) + 1)
+    }
+
+
+    for(const ch of arr){
+        if(freq1.get(ch) === 1){
+            count++;
+            if(count === k){
+                return ch
+            }
+        }
+    }
+
+    return ""
+    
+};
