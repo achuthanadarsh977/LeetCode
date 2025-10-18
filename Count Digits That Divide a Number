@@ -1,0 +1,17 @@
+function countDigits(num: number): number {
+
+   let output = 0
+
+   let a = String(num).split("")
+
+   for(let i of a){
+    if(num % parseInt(i) === 0){
+        output+=1
+    }
+   }
+
+   return output
+
+    
+    
+};
