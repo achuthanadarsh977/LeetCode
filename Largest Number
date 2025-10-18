@@ -1,0 +1,12 @@
+function largestNumber(nums: number[]): string {
+
+
+    let n = nums.length
+    
+    nums.sort((a,b) => (b.toString()+a.toString()).localeCompare(a.toString() + b.toString()))
+    if(nums[0].toString() === "0"){
+        return "0"
+    }
+
+    return nums.join('')
+};
