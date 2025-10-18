@@ -1,0 +1,15 @@
+function repeatedCharacter(s: string): string {
+
+    let letters:String[] = []
+
+    for(let i of s){
+        if(letters.includes(i)){
+            return i
+        }
+
+        else{
+            letters.push(i)
+        }
+    }
+    
+};
