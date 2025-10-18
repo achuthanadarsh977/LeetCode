@@ -1,0 +1,23 @@
+function smallestSubsequence(s: string): string {
+
+    const visited = new Set()
+    const last = {}
+    const stack = []
+
+    for(let i=0;i<s.length;i++){
+        last[s[i]] = i
+    }
+
+    for(let i=0;i<s.length;i++){
+        if(!visited.has(s[i])){
+            while(stack && stack[stack.length - 1] > s[i] && last[stack[stack.length -1]] > i){
+                visited.delete(stack.pop())
+            }
+            stack.push(s[i])
+            visited.add(s[i])
+        }
+    }
+
+    return stack.join('')
+    
+};
