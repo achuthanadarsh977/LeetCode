@@ -1,0 +1,8 @@
+function smallestRangeI(nums: number[], k: number): number {
+
+    let m = Math.max(...nums)
+    let n = Math.min(...nums)
+
+    return Math.max(0,m-n-2*k)
+    
+};
