@@ -1,0 +1,21 @@
+function findContentChildren(g: number[], s: number[]): number {
+
+    g.sort((a,b) => (a-b))
+    s.sort((a,b) => (a-b))
+
+    let c=0
+
+    let i=0
+
+    while(i < s.length){
+        if(s[i] >= g[c]){
+            c++;
+        }
+
+        ++i
+    } 
+     
+    return c++;
+   
+
+};
