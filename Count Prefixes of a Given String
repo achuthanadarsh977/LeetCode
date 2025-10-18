@@ -1,0 +1,13 @@
+function countPrefixes(words: string[], s: string): number {
+
+    let count=0
+
+    for(const ch of words){
+        if(s.startsWith(ch)){
+            count++;
+        }
+    }
+
+    return count
+    
+};
