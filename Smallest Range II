@@ -1,0 +1,12 @@
+function smallestRangeII(nums: number[], k: number): number {
+
+    nums.sort((a,b) => a-b)
+    let res = nums[nums.length-1] - nums[0]
+
+    for(let i=0;i<nums.length - 1;i++){
+        const high = Math.max(nums[nums.length-1]-k,nums[i]+k)
+        const low = Math.min(nums[0]+k,nums[i+1]-k)
+        res = Math.min(res,high-low)
+    }
+    return res
+};
