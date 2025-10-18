@@ -1,0 +1,23 @@
+function maxFrequencyElements(nums: number[]): number {
+    
+    const freq = new Map<number,number>()
+    
+    for(const num of nums){
+        freq.set(num , (freq.get(num) || 0) + 1)
+    }
+
+    const x = Math.max(...freq.values())
+    let sum = 0
+
+    for(const [keys,values] of freq.entries()){
+        if(values === x){
+            sum+=values
+        }
+    }
+
+    return sum
+
+    
+
+    
+};
