@@ -1,0 +1,37 @@
+/**
+ * Definition for a binary tree node.
+ * class TreeNode {
+ *     val: number
+ *     left: TreeNode | null
+ *     right: TreeNode | null
+ *     constructor(val?: number, left?: TreeNode | null, right?: TreeNode | null) {
+ *         this.val = (val===undefined ? 0 : val)
+ *         this.left = (left===undefined ? null : left)
+ *         this.right = (right===undefined ? null : right)
+ *     }
+ * }
+ */
+
+function reverseOddLevels(root: TreeNode | null): TreeNode | null {
+
+    if(!root){
+        return null
+    }
+
+    function dfs(left:TreeNode | null , right:TreeNode | null ,level:number):void{
+
+        if(!left || !right){
+            return;
+        }
+        if(level%2 === 1){
+            const temp = left.val
+            left.val = right.val
+            right.val = temp
+
+        }
+        dfs(left.left,right.right,level+1)
+        dfs(left.right,right.left,level+1)
+    }
+    dfs(root.left,root.right,1)
+    return root
+};
