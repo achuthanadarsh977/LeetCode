@@ -1,0 +1,17 @@
+function isUgly(n: number): boolean {
+
+    let m:number[] = [2,3,5]
+
+
+    if(n <= 0){
+        return false
+    }
+
+    for(let i=0;i<m.length;i++){
+        while(n % m[i] === 0){
+            n = Math.floor(n/m[i])
+        }
+    }
+    return n === 1
+    
+};
