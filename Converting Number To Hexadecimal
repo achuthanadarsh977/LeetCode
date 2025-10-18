@@ -1,0 +1,11 @@
+function toHex(num: number): string {
+
+
+    if(num < 0){
+        num = 0XFFFFFFFF + num + 1
+    }
+
+
+    return num.toString(16)
+    
+};
