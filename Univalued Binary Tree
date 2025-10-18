@@ -1,0 +1,31 @@
+/**
+ * Definition for a binary tree node.
+ * class TreeNode {
+ *     val: number
+ *     left: TreeNode | null
+ *     right: TreeNode | null
+ *     constructor(val?: number, left?: TreeNode | null, right?: TreeNode | null) {
+ *         this.val = (val===undefined ? 0 : val)
+ *         this.left = (left===undefined ? null : left)
+ *         this.right = (right===undefined ? null : right)
+ *     }
+ * }
+ */
+
+function isUnivalTree(root: TreeNode | null): boolean {
+    return helper(root,root.val)
+    
+};
+
+
+function helper(root:TreeNode | null , val:number){
+    if(root === null){
+        return true
+    }
+
+    if(root.val !== val){
+        return false
+    }
+
+    return helper(root.left , val) && helper(root.right,val)
+}
