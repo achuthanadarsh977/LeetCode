@@ -1,0 +1,6 @@
+function numWaterBottles(numBottles: number, numExchange: number): number {
+
+    const m = numBottles - 1
+    const n = numExchange - 1
+    return numBottles + Math.floor(m/n)
+};
