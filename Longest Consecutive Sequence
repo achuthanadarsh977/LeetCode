@@ -1,0 +1,20 @@
+function longestConsecutive(nums: number[]): number {
+
+    let longest = 0
+    const t = new Set(nums)
+    if(nums.length === 0){
+        return 0
+    }
+    for(let n of t){
+        if(!t.has(n-1)){
+            let length = 1
+            while(t.has(n+length)){
+                length+=1
+            }
+            longest = Math.max(longest,length)
+        }
+    }
+
+    return longest
+    
+};
