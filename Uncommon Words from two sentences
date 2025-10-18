@@ -1,0 +1,26 @@
+function uncommonFromSentences(s1: string, s2: string): string[] {
+
+    const t1 = s1.split(" ")
+    const t2 = s2.split(" ")
+
+    const s4 = []
+
+
+    const s3 = t1.concat(t2)
+
+    let record = new Map<string,number>()
+
+    for(const s of s3){
+        record.set(s , (record.get(s) || 0) + 1)
+    }
+    
+
+    for(const ch of s3){
+        if(record.get(ch) === 1){
+            s4.push(ch)
+        }
+    }
+
+    return s4
+    
+};
