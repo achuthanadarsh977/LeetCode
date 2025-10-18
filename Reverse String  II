@@ -1,0 +1,26 @@
+function reverseStr(s: string, k: number): string {
+
+    const n = s.split('')
+
+    for(let i=0;i < n.length;i+=2*k){
+        let left=i
+        let right=i+k-1
+
+        while(left < right){
+            if(n[right] === undefined){
+                right--;
+                continue;
+            }
+
+
+            [n[left] , n[right]] = [n[right] , n[left]]
+            left++;
+            right--;
+        }
+    }
+
+
+    return n.join('')
+
+    
+};
