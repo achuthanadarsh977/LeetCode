@@ -1,0 +1,23 @@
+function isHappy(n: number): boolean {
+    let seen = new Set<number>()
+
+    let cur = n
+
+    while(!seen.has(cur)){
+        seen.add(cur)
+        let summ = 0
+
+        for(let digits of cur.toString()){
+            summ+=parseInt(digits)**2
+        }
+
+        if(summ === 1){
+            return true
+
+        }
+        cur = summ
+    }
+
+    return false
+    
+};
