@@ -1,0 +1,16 @@
+function findClosestNumber(nums: number[]): number {
+    
+    let a = nums[0]
+
+    for(const x of nums){
+        if(Math.abs(x)  < Math.abs(a)){
+            a = x
+        }
+
+        else if (Math.abs(x) === Math.abs(a)){
+            a = Math.max(x,a)
+        }
+    }
+
+    return a
+};
