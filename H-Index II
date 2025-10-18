@@ -1,0 +1,16 @@
+function hIndex(citations: number[]): number {
+
+    const c = citations.sort((a,b) => a - b)
+    const res:number[] = []
+
+
+    for(let i=0;i<c.length;i++){
+        let h = c.length - i
+        if(c[i] >= h){
+            res.push(i)
+        }
+    }
+
+    return res.length
+    
+};
