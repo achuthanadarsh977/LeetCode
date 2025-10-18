@@ -1,0 +1,31 @@
+
+function productExceptSelf(x:number[]):number[]{
+    const y = x.length
+    
+    const n = new Array(y).fill(1)
+    
+    
+    let prefix = 1
+    
+    for(let i=0;i<y;i++){
+        n[i] = prefix
+        prefix*=x[i]
+    }
+    
+    let suffix = 1 
+    for(let i=y-1;i >= 0;i-- ){
+        n[i]*=suffix
+        suffix*=x[i]
+        
+    }
+    
+    
+    return n
+    
+
+    
+    
+    
+    
+    
+}
