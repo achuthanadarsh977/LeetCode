@@ -1,0 +1,16 @@
+function findMiddleIndex(nums: number[]): number {
+
+   const middle = nums.reduce((a,b) => a+b,0)
+   let leftsum = 0
+
+   for(let i=0;i<nums.length;i++){
+       const rightsum = middle - leftsum - nums[i]
+       if(leftsum === rightsum){
+          return i
+       }
+       leftsum += nums[i]
+   } 
+
+   return -1
+    
+};
