@@ -1,0 +1,20 @@
+function percentageLetter(s: string, letter: string): number {
+
+    const n = s.split("")
+
+    const freq = new Map<string,number>()
+
+
+    for(const ch of s){
+        freq.set(ch , (freq.get(ch) || 0) + 1)
+    }
+
+    if(freq.has(letter)){
+        let i = freq.get(letter)
+        let r = s.length
+        let j = (i/r)
+        return Math.floor(j*100)
+    }
+
+    return 0
+};
