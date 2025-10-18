@@ -1,0 +1,13 @@
+function checkTwoChessboards(coordinate1: string, coordinate2: string): boolean {
+
+   const col1 = coordinate1.charCodeAt(0) - 'a'.charCodeAt(0) + 1
+   const col2 = coordinate2.charCodeAt(0) - 'a'.charCodeAt(0) + 1
+
+   const row1 = parseInt(coordinate1[1])
+   const row2 = parseInt(coordinate2[1])
+
+   return ((col1+col2+row1+row2)%2) === 0
+
+
+    
+};
