@@ -1,0 +1,28 @@
+function restoreIpAddresses(s: string): string[] {
+    
+    let n = s.length
+    let ans:string[] = []
+
+    for(let i=1;i<n;i++){
+        for(let j=i+1;j<n;j++){
+            for(let k=j+1;k<n;k++){
+                let a = s.slice(0,i)
+                let b = s.slice(i,j)
+                let c = s.slice(j,k)       
+                let d = s.slice(k)   
+
+                if (works(a) && works(b) && works(c) && works(d)){
+                    ans.push(`${a}.${b}.${c}.${d}`)
+                } 
+            }
+        }
+    }
+
+    return ans
+};
+
+
+function works(s:any){
+
+    return s === String(parseInt(s)) && parseInt(s) <= 255
+}
