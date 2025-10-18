@@ -1,0 +1,16 @@
+function countPrimes(n: number): number {
+  if (n <= 2) return 0;
+
+  const countprime = new Array(n).fill(true);
+  countprime[0] = countprime[1] = false;
+
+  for (let i = 2; i * i < n; i++) {
+    if (countprime[i]) {
+      for (let j = i * i; j < n; j += i) {
+        countprime[j] = false;
+      }
+    }
+  }
+
+  return countprime.filter(Boolean).length;
+}
