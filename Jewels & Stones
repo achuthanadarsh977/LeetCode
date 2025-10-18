@@ -1,0 +1,13 @@
+function numJewelsInStones(jewels: string, stones: string): number {
+    let jewel = new Set(jewels)
+    let num_jewels = 0
+
+    for(let s of stones){
+        if(jewel.has(s)){
+            num_jewels+=1
+        }
+
+    }
+
+    return num_jewels
+};
