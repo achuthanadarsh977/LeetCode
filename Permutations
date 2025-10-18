@@ -1,0 +1,26 @@
+function permute(nums: number[]): number[][] {
+
+    let n = nums.length
+    
+    const ans = []
+    const sol = []
+
+    function backtrack(){
+        if(sol.length === n){
+            ans.push(sol.slice(0))
+            return
+        }
+
+        for(let x of nums){
+            if(!sol.includes(x)){
+                sol.push(x)
+                backtrack()
+                sol.pop()
+            }
+        }
+    }
+
+    backtrack()
+    return ans
+    
+};
