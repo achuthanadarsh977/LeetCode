@@ -1,0 +1,29 @@
+function mostCommonWord(paragraph: string, banned: string[]): string {
+
+    const words = paragraph
+    .toLowerCase()
+    .replace(/[^a-z]/g, " ")  // remove punctuation, keep letters
+    .split(/\s+/);
+
+  const bannedSet = new Set(banned); // use banned list, not words
+  const countMap: Record<string, number> = {};
+
+  for (const word of words) {
+    if (word && !bannedSet.has(word)) {
+      countMap[word] = (countMap[word] || 0) + 1;
+    }
+  }
+
+  let mostCommon = "";
+  let maxCount = 0;
+
+  for (const [word, count] of Object.entries(countMap)) {
+    if (count > maxCount) {
+      mostCommon = word;
+      maxCount = count;
+    }
+  }
+
+  return mostCommon
+    
+};
