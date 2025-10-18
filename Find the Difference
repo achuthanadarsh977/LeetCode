@@ -1,0 +1,22 @@
+function findTheDifference(s: string, t: string): string {
+
+    let a :string[] = s.split("").sort()
+    let b : string[] = t.split("").sort()
+  
+
+        for(let i=0;i<=b.length;i++){
+            if(a[i] === b[i]){
+                continue
+            }
+
+            else{
+                return  b[i]
+            }
+        }
+    
+
+    return ""
+
+    
+    
+};
