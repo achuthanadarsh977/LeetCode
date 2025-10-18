@@ -1,0 +1,13 @@
+function detectCapitalUse(word: string): boolean {
+
+
+
+    
+
+    if (word === word.toUpperCase() || word === word.toLowerCase() || isTitle(word)){
+        return true
+    } 
+
+
+    return false
+};
