@@ -1,0 +1,18 @@
+function longestPalindrome(s: string): number {
+    const denmark: Record<string, number> = {}
+    let r = 0
+
+    for (const d of s) {
+        denmark[d] = (denmark[d] || 0) + 1
+    }
+
+    for (const count of Object.values(denmark)) {
+        if (count % 2 === 0) {
+            r += count
+        } else {
+            r += count - 1  // ✅ Fix: actually add the even part of odd counts
+        }
+    }
+
+    return r < s.length ? r + 1 : r
+}
