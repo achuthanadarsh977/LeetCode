@@ -1,0 +1,17 @@
+function countAsterisks(s: string): number {
+   let red = true
+   let count = 0
+
+   for(let i=0;i<s.length;i++){
+     if(red && s[i] === "*"){
+        count++
+     }
+
+     if(s[i] === "|"){
+        red = false
+     }
+   }
+
+   return count
+
+};
