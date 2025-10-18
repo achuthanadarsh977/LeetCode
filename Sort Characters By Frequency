@@ -1,0 +1,21 @@
+function frequencySort(s: string): string {
+
+    const r = s.split("")
+    const freq = new Map<string,number>()
+
+    for(const s of r){
+        freq.set(s , (freq.get(s) || 0) + 1)
+    }
+
+    const sorted = [...freq.entries()].sort((a,b) => b[1] - a[1])
+
+   let result = ""
+
+   for(const [char,count] of sorted){
+       result+=char.repeat(count)
+   }
+
+   return result
+
+    
+};
