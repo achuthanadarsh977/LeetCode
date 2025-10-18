@@ -1,0 +1,25 @@
+function findDuplicates(nums: number[]): number[] {
+
+    let nums2 = []
+    let freq1 = new Map<number,number>()
+
+    for(const ch of nums){
+        freq1.set(ch , (freq1.get(ch) || 0) + 1)
+    }
+
+
+    for(const [keys,values] of freq1.entries()){
+
+        if(values > 1){
+            nums2.push(keys)
+        }
+
+    }
+
+
+    return nums2
+
+
+
+    
+};
