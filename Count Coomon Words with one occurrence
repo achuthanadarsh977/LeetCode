@@ -1,0 +1,29 @@
+function countWords(words1: string[], words2: string[]): number {
+
+    
+
+    const words4 = []
+
+    const freq1 = new Map<string,number>()
+    const freq2 = new Map<string,number>()
+
+    for(const ch of words1){
+        freq1.set(ch , (freq1.get(ch) || 0) + 1)
+    }
+
+    for(const ct of words2){
+        freq2.set(ct , (freq2.get(ct) || 0) + 1)
+    }
+
+    for(let i=0;i<words1.length;i++){
+        for(let j=0;j<words2.length;j++){
+            if(words1[i] === words2[j] && freq1.get(words1[i]) === 1 && freq2.get(words2[j]) === 1 ){
+
+                words4.push(words1[i])
+
+            }
+        }
+    }
+
+    return words4.length
+};
