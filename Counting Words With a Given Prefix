@@ -1,0 +1,13 @@
+function prefixCount(words: string[], pref: string): number {
+
+    let count = 0
+
+    for(let ch of words){
+        if(pref === ch.slice(0,pref.length)){
+            count++;
+        }
+    }
+    
+    return count
+    
+};
