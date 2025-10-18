@@ -1,0 +1,22 @@
+function restoreString(s: string, indices: number[]): string {
+
+    const n = indices.length
+
+
+    const m = new Map<number,string>()
+
+    for(let i=0;i<n;i++){
+       
+            m.set(indices[i],s.charAt(i))
+    }
+
+    let res = "";
+    for(let i=0;i<n;i++){
+        res+=m.get(i)
+    }
+
+    return res
+
+
+    
+};
