@@ -1,0 +1,17 @@
+function isPossibleToSplit(nums: number[]): boolean {
+    const items: Record<string,number> = {}
+
+    for (const num of nums){
+        items[num] = (items[num] || 0) + 1
+
+        if(items[num] > 2){
+            return false
+        }
+    }
+
+    return true
+
+
+
+   
+};
