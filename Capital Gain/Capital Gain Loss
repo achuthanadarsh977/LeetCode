@@ -1,3 +1,0 @@
-select stock_name , sum(case when operation = 'sell' then price 
-when operation = 'Buy' then -price end) as capital_gain_loss
-FROM Stocks group by  stock_name order by capital_gain_loss DESC;
