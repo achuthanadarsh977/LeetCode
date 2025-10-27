@@ -1,0 +1,24 @@
+function countVowelSubstrings(word: string): number {
+  const vowels = new Set(['a', 'e', 'i', 'o', 'u']);
+  let count = 0;
+
+  for (let i = 0; i < word.length; i++) {
+    if (vowels.has(word[i])) {
+      const substring = new Set<string>();
+
+      for (let j = i; j < word.length; j++) {
+        const ch = word[j];
+        if (!vowels.has(ch)) break; // stop when we hit a consonant
+
+        substring.add(ch);
+
+        // if all 5 vowels found
+        if (substring.size === 5) {
+          count++;
+        }
+      }
+    }
+  }
+
+  return count;
+}
