@@ -1,0 +1,20 @@
+function minExtraChar(s: string, dictionary: string[]): number {
+
+    const n = s.length
+    const t = new Set(dictionary)
+
+    const dp = new Array(n+1).fill(0)
+
+    dp[n] = 0
+    for(let i=n-1;i>=0;i--){
+        dp[i] = 1+dp[i+1]
+        for(let j=i+1;j<=n;j++){
+          const sub = s.slice(i,j)
+          if(t.has(sub)){
+            dp[i] = Math.min(dp[i],dp[j])
+          }
+     }
+    }
+    return dp[0]
+     
+};
