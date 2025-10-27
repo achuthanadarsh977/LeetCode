@@ -1,0 +1,29 @@
+function rotateRight(head: ListNode | null, k: number): ListNode | null {
+
+    if(head === null || head.next === null || k === 0){
+        return head
+    }
+
+    let curr : ListNode = head
+    let count = 1
+
+    while(curr.next !== null){
+        curr = curr.next
+        count++
+    }
+
+    curr.next = head
+
+    k%=count
+
+    for(let i=0;i<count-k;i++){
+        curr = curr.next
+        head = head.next
+    }
+
+    curr.next = null
+    return head
+
+
+    
+};
