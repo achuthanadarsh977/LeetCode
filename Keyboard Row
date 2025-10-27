@@ -1,0 +1,24 @@
+function findWords(words: string[]): string[] {
+    const line1 = new Set("qwertyuiop");
+    const line2 = new Set("asdfghjkl");
+    const line3 = new Set("zxcvbnm");
+
+    const res: string[] = [];
+
+    // Helper: check if all chars of setA are in setB
+    function isSubset(setA: Set<string>, setB: Set<string>): boolean {
+        for (const char of setA) {
+            if (!setB.has(char)) return false;
+        }
+        return true;
+    }
+
+    for (const word of words) {
+        const w = new Set(word.toLowerCase());
+        if (isSubset(w, line1) || isSubset(w, line2) || isSubset(w, line3)) {
+            res.push(word);
+        }
+    }
+
+    return res;
+}
