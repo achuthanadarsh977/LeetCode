@@ -1,0 +1,13 @@
+function possibleStringCount(word: string): number {
+
+    let count = word.length
+
+    for(let i=1;i<word.length;i++){
+        if(word[i] !== word[i-1]){
+            count-=1
+        }
+    }
+
+    return count
+    
+};
