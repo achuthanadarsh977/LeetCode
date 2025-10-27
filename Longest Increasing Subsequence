@@ -1,0 +1,33 @@
+function lengthOfLIS(nums: number[]): number {
+
+    const result:number[] = []
+    let n = nums.length
+
+    for(let x of nums){
+        let left = 0
+        let right = n
+
+        while(left < right){
+            let mid = Math.floor((left+right)/2)
+
+            if(result[mid] < x){
+                left = mid+1
+            }
+
+            else{
+                right = mid
+            }
+        }
+
+        if(left === n){
+            result.push(x)
+        }
+
+        else{
+            result[left] = x
+        }
+    }
+
+    return result.length
+
+};
